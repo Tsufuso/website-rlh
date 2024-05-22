@@ -1,0 +1,83 @@
+/* CSS actif */
+.active {
+    background-color: #555;
+}
+
+/* Réinitialisation des styles */
+body {
+    background-color: #f0f0f0; /* Gris clair */
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Taille de la fenêtre visible */
+}
+/* Barre latérale */
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+    display: block;
+}
+
+.sidenav a i {
+    margin-right: 10px;
+}
+
+.sidenav a:hover {
+    background-color: #555;
+}
+
+/* Contenu principal */
+.main {
+    margin-left: 220px; /* Augmentation de la marge pour éviter que le contenu ne soit coupé */
+    padding: 20px;
+}
+
+/* Conteneur pour la photo de profil */
+.profile-container {
+    text-align: center; /* Pour centrer l'image horizontalement */
+}
+
+/* Photo de profil */
+.profile-image {
+    width: 150px; /* Largeur de l'image */
+    height: 150px; /* Hauteur de l'image */
+    border-radius: 50%; /* Pour faire un cercle */
+}
+
+/* Description */
+.description {
+    font-size: 20px; /* Taille de police plus grande */
+    color: #555; /* Couleur de texte plus foncée */
+    font-family: Arial, sans-serif; /* Police de caractères */
+}
+/* Contenu aligné à gauche */
+.left-align {
+    text-align: left;
+}
+.social-link {
+    margin-bottom: 20px; /* Augmente la marge en bas de chaque lien */
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+}
+/* fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff*/ 
