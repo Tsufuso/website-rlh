@@ -4,6 +4,7 @@ Ce repository contient des fichiers HTML, CSS et JavaScript pour un site web de 
 # Structure du Projet
 
 root/
+
 │
 
 ├── index.html
