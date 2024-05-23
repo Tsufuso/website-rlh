@@ -9,13 +9,16 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
+    flex-direction: column; /* Modification pour une disposition en colonne par défaut */
 }
+
 .center-content {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh; /* Taille de la fenêtre visible */
 }
+
 /* Barre latérale */
 .sidenav {
     height: 100%;
@@ -32,7 +35,7 @@ body {
     padding: 10px 15px;
     text-decoration: none;
     font-size: 18px;
-    color: #fff;
+    color: #fff; /* Couleur du texte blanche */
     display: block;
 }
 
@@ -41,7 +44,7 @@ body {
 }
 
 .sidenav a:hover {
-    background-color: #555;
+    background-color: #555; /* Couleur de survol légèrement plus foncée */
 }
 
 /* Contenu principal */
@@ -68,10 +71,13 @@ body {
     color: #555; /* Couleur de texte plus foncée */
     font-family: Arial, sans-serif; /* Police de caractères */
 }
+
 /* Contenu aligné à gauche */
 .left-align {
     text-align: left;
 }
+
+/* Liens sociaux */
 .social-link {
     margin-bottom: 20px; /* Augmente la marge en bas de chaque lien */
 }
@@ -80,4 +86,87 @@ body {
     display: flex;
     flex-direction: column;
 }
-/* fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff*/ 
+
+/* Section des projets */
+.project-section {
+    display: none; /* Masquer les sections par défaut */
+}
+
+.project-section:first-child {
+    display: block; /* Afficher la première section par défaut */
+}
+
+/*******************************************************************************/
+/* Navigation supérieure */
+.navbar {
+    overflow: hidden;
+    background-color: #333; /* Couleur du menu principal */
+}
+
+/* Navigation links */
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white; /* Couleur du texte blanc */
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* The subnavigation menu */
+.subnav {
+    float: left;
+    overflow: hidden;
+}
+
+/* Subnav button */
+.subnav .subnavbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white; /* Couleur du texte blanc */
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+/* Style the subnav content - positioned absolute */
+.subnav-content {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333; /* Couleur du sous-menu */
+    width: 150px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Show subnav content on hover */
+.subnav:hover .subnav-content {
+    display: block;
+    opacity: 1;
+}
+
+/* Keep subnav content visible when mouse is over it */
+.subnav-content:hover {
+    display:block;
+}
+
+/* Keep subnav content visible when mouse is over subnav button */
+.subnav:hover .subnav-content,
+.subnav-content:hover {
+    display: block;
+}
+
+/* Keep subnav content visible when subnav button is hovered */
+.subnav .subnavbtn:hover ~ .subnav-content {
+    display: block;
+}
+
+/* Afficher le contenu du sous-menu lorsque la classe .show est présente */
+.subnav-content.show {
+    display: block;
+}
