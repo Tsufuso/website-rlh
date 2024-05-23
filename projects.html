@@ -1,21 +1,46 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projets</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projets</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    .navbar {
+        display: flex;
+        justify-content: center;
+    }
+
+    .subnav-content {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #333;
+        width: 150px;
+        z-index: 1;
+        margin-top: 10px;
+    }
+</style>
 </head>
 <body>
 
-<!-- Barre latérale -->
+<div class="navbar">
+    <div class="subnav">
+        <button id="uir-btn" class="subnavbtn"><i class="fas fa-graduation-cap"></i> UIR <i class="fa fa-caret-down"></i></button>
+        <div id="uir-submenu" class="subnav-content">
+            <a href="#section-3eme">3ème année</a>
+            <a href="#section-4eme">4ème année</a>
+            <a href="#section-5eme">5ème année</a>
+        </div>
+    </div>
+</div>
+
 <div class="sidenav">
-    <!-- Photo de profil dans la barre latérale -->
     <div class="profile-container navbar-profile">
         <img src="profile.png" alt="Ma photo de profil" class="profile-image navbar-image">
     </div>
-    <!-- Liens -->
+
     <a href="index.html"><i class="fas fa-home"></i> Accueil</a>
     <a href="about.html"><i class="fas fa-user"></i> À propos de moi</a>
     <a href="projects.html" class="active"><i class="fas fa-folder"></i> Projets</a>
@@ -23,33 +48,78 @@
     <a href="social_media.html"><i class="fas fa-share-alt"></i> Réseaux sociaux</a>
 </div>
 
-<!-- Contenu principal -->
-<!-- Contenu principal -->
 <div class="main left-align">
-    <h1>Projets 3ème année</h1>
-    <!-- Description des projets -->
-    <div class="project">
-        <h2>Projet Todo Tasks</h2>
-        <p>travail pratique sur Shell</p>
-        <a href="https://github.com/Tsufuso/System-Programming-and-Administration.git"><i class="fab fa-github"></i> https://github.com/Tsufuso/System-Programming-and-Administration.git</a>
-    </div>
-    <div class="project">
-        <h2>Gestion-Produit-Stock</h2>
-        <p>projet en Java/NetBeans</p>
-        <a href="https://github.com/Tsufuso/Gestion-Produit-Stock-maven.git"><i class="fab fa-github"></i> https://github.com/Tsufuso/Gestion-Produit-Stock-maven.git</a>
-    </div>
-    <div class="project">
-        <h2>Gestion de Bibliotheque</h2>
-        <p>projet en Python</p>
-        <a href="https://github.com/Tsufuso/Gestion-Biblioth-que.git"><i class="fab fa-github"></i> https://github.com/Tsufuso/Gestion-Biblioth-que.git</a>
-    </div>
-    <div class="project">
-        <h2>Gestion d'un Restaurant Universitaire</h2>
-        <p>projet en Java/JavaFX</p>
-        <a href="a venir"><i class="fab fa-github"></i> a venir</a>
+    <h1>Projets</h1>
+
+    <div id="section-3eme" class="project-section">
+        <h2>3ème année</h2>
+        <div class="project">
+            <h3>Projet Todo Tasks</h3>
+            <p>travail pratique sur Shell</p>
+            <a href="https://github.com/Tsufuso/System-Programming-and-Administration.git"><i class="fab fa-github"></i> https://github.com/Tsufuso/System-Programming-and-Administration.git</a>
+        </div>
+        <div class="project">
+            <h3>Gestion-Produit-Stock</h3>
+            <p>projet en Java/NetBeans</p>
+            <a href="https://github.com/Tsufuso/Gestion-Produit-Stock-maven.git"><i class="fab fa-github"></i> https://github.com/Tsufuso/Gestion-Produit-Stock-maven.git</a>
+        </div>
+        <div class="project">
+            <h3>Gestion de Bibliotheque</h3>
+            <p>projet en Python</p>
+            <a href="https://github.com/Tsufuso/Gestion-Biblioth-que.git"><i class="fab fa-github"></i> https://github.com/Tsufuso/Gestion-Biblioth-que.git</a>
+        </div>
+        <div class="project">
+            <h3>Gestion d'un Restaurant Universitaire</h3>
+            <p>projet en Java/JavaFX</p>
+            <a href="#"><i class="fab fa-github"></i> A venir ...</a>
+
+        </div>
     </div>
 
+    <div id="section-4eme" class="project-section" style="display: none;">
+        <h2>4ème année</h2>
+        <!-- Insérez ici les projets de 4ème année -->
+    </div>
 
-<script src="js/script.js"></script>
-</body>
-</html>
+    <div id="section-5eme" class="project-section" style="display: none;">
+        <h2>5ème année</h2>
+        <!-- Insérez ici les projets de 5ème année -->
+    </div>
+</div>
+<script>
+    // JavaScript pour afficher les sous-menus
+    document.querySelectorAll('.subnav').forEach(item => {
+        const subnavContent = item.querySelector('.subnav-content');
+    
+        // Ajoutez un événement 'mouseenter' au bouton de sous-menu
+        item.querySelector('.subnavbtn').addEventListener('mouseenter', () => {
+            subnavContent.classList.add('show');
+        });
+    
+        // Ajoutez un événement 'mouseleave' au conteneur de sous-menu
+        subnavContent.addEventListener('mouseleave', () => {
+            subnavContent.classList.remove('show');
+        });
+    });
+    
+    // JavaScript pour afficher les informations correspondantes lors du clic sur un sous-menu
+    document.querySelectorAll('.subnav-content a').forEach(link => {
+        link.addEventListener('click', event => {
+            event.preventDefault(); // Empêche le comportement par défaut du lien
+    
+            const target = event.target.getAttribute('href'); // Récupère l'attribut "href" du lien cliqué
+            const projectSection = document.querySelector(target); // Sélectionne la section de projet correspondante
+    
+            // Masque toutes les sections de projet
+            document.querySelectorAll('.project-section').forEach(section => {
+                section.style.display = 'none';
+            });
+    
+            // Affiche la section de projet correspondante
+            projectSection.style.display = 'block';
+        });
+    });
+    </script>
+    </body>
+    </html>
+    
