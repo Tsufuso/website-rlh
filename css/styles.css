@@ -170,3 +170,57 @@ body {
 .subnav-content.show {
     display: block;
 }
+/* Barre latérale sur les appareils mobiles */
+/* Media Queries pour les appareils mobiles */
+@media screen and (max-width: 768px) {
+    /* Réduire la largeur de la barre latérale */
+    .sidenav {
+        width: 100%;
+        margin-left: 0; /* Réinitialiser la marge */
+        position: static; /* Réinitialiser la position */
+    }
+
+    /* Ajuster la marge du contenu principal */
+    .main {
+        margin-left: 0;
+        padding: 20px 10px; /* Réduire le rembourrage */
+    }
+
+    /* Ajuster la taille de la photo de profil */
+    .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* Ajuster la taille des icônes */
+    .sidenav a i {
+        margin-right: 5px; /* Réduire l'espacement */
+    }
+
+    /* Réduire la taille de la police pour les liens */
+    .sidenav a {
+        font-size: 16px;
+    }
+
+    /* Ajuster la taille de la police pour la navigation supérieure */
+    .navbar a {
+        font-size: 14px;
+    }
+
+    /* Ajuster la taille de la police pour le sous-menu */
+    .subnav .subnavbtn {
+        font-size: 14px;
+        padding: 10px 12px; /* Réduire le rembourrage */
+    }
+
+    /* Ajuster la taille de la police pour les liens du sous-menu */
+    .subnav-content a {
+        font-size: 14px;
+        padding: 10px 12px; /* Réduire le rembourrage */
+    }
+
+    /* Ajuster la taille des icônes du sous-menu */
+    .subnav-content a i {
+        margin-right: 5px; /* Réduire l'espacement */
+    }
+}
