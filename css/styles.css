@@ -206,6 +206,13 @@ body {
     .navbar a {
         font-size: 14px;
     }
+    .sidenav {
+        order: 2; /* Déplacer la barre latérale en deuxième position */
+    }
+
+    .navbar {
+        order: 3; /* Déplacer la navigation supérieure en troisième position */
+    }
 
     /* Ajuster la taille de la police pour le sous-menu */
     .subnav .subnavbtn {
