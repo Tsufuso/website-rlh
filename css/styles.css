@@ -131,24 +131,24 @@ body {
     margin: 0;
 }
 
-/* Style the subnav content - positioned absolute */
+/* Style du sous-menu pour les petits écrans */
 .subnav-content {
     display: none;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #333; /* Couleur du sous-menu */
-    width: 150px;
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    position: static; /* Modifier la position pour s'adapter aux petits écrans */
+    width: auto; /* Ajuster la largeur automatiquement */
+    opacity: 1; /* Garder le sous-menu visible */
+    transition: none; /* Supprimer la transition pour une ouverture instantanée */
+
+    /* Modifier la couleur de fond et la police pour une meilleure lisibilité */
+    background-color: #555;
+    color: white;
 }
 
-/* Show subnav content on hover */
-.subnav:hover .subnav-content {
+/* Afficher le sous-menu lorsque le bouton est cliqué */
+.subnav.show .subnav-content {
     display: block;
-    opacity: 1;
 }
+
 
 /* Keep subnav content visible when mouse is over it */
 .subnav-content:hover {
@@ -206,12 +206,231 @@ body {
     .navbar a {
         font-size: 14px;
     }
-    .sidenav {
-        order: 2; /* Déplacer la barre latérale en deuxième position */
+
+    /* Ajuster la taille de la police pour le sous-menu */
+    .subnav .subnavbtn {
+        font-size: 14px;
+        padding: 10px 12px; /* Réduire le rembourrage */
     }
 
-    .navbar {
-        order: 3; /* Déplacer la navigation supérieure en troisième position */
+    /* Ajuster la taille de la police pour les liens du sous-menu */
+    .subnav-content a {
+        font-size: 14px;
+        padding: 10px 12px; /* Réduire le rembourrage */
+    }
+
+    /* Ajuster la taille des icônes du sous-menu */
+    .subnav-content a i {
+        margin-right: 5px; /* Réduire l'espacement */
+    }
+}
+/* CSS actif */
+.active {
+    background-color: #555;
+}
+
+/* Réinitialisation des styles */
+body {
+    background-color: #f0f0f0; /* Gris clair */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Modification pour une disposition en colonne par défaut */
+}
+
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Taille de la fenêtre visible */
+}
+
+/* Barre latérale */
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff; /* Couleur du texte blanche */
+    display: block;
+}
+
+.sidenav a i {
+    margin-right: 10px;
+}
+
+.sidenav a:hover {
+    background-color: #555; /* Couleur de survol légèrement plus foncée */
+}
+
+/* Contenu principal */
+.main {
+    margin-left: 220px; /* Augmentation de la marge pour éviter que le contenu ne soit coupé */
+    padding: 20px;
+}
+
+/* Conteneur pour la photo de profil */
+.profile-container {
+    text-align: center; /* Pour centrer l'image horizontalement */
+}
+
+/* Photo de profil */
+.profile-image {
+    width: 150px; /* Largeur de l'image */
+    height: 150px; /* Hauteur de l'image */
+    border-radius: 50%; /* Pour faire un cercle */
+}
+
+/* Description */
+.description {
+    font-size: 20px; /* Taille de police plus grande */
+    color: #555; /* Couleur de texte plus foncée */
+    font-family: Arial, sans-serif; /* Police de caractères */
+}
+
+/* Contenu aligné à gauche */
+.left-align {
+    text-align: left;
+}
+
+/* Liens sociaux */
+.social-link {
+    margin-bottom: 20px; /* Augmente la marge en bas de chaque lien */
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Section des projets */
+.project-section {
+    display: none; /* Masquer les sections par défaut */
+}
+
+.project-section:first-child {
+    display: block; /* Afficher la première section par défaut */
+}
+
+/*******************************************************************************/
+/* Navigation supérieure */
+.navbar {
+    overflow: hidden;
+    background-color: #333; /* Couleur du menu principal */
+}
+
+/* Navigation links */
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white; /* Couleur du texte blanc */
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* The subnavigation menu */
+.subnav {
+    float: left;
+    overflow: hidden;
+}
+
+/* Subnav button */
+.subnav .subnavbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white; /* Couleur du texte blanc */
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+/* Style du sous-menu pour les petits écrans */
+.subnav-content {
+    display: none;
+    position: static; /* Modifier la position pour s'adapter aux petits écrans */
+    width: auto; /* Ajuster la largeur automatiquement */
+    opacity: 1; /* Garder le sous-menu visible */
+    transition: none; /* Supprimer la transition pour une ouverture instantanée */
+
+    /* Modifier la couleur de fond et la police pour une meilleure lisibilité */
+    background-color: #555;
+    color: white;
+}
+
+/* Afficher le sous-menu lorsque le bouton est cliqué */
+.subnav.show .subnav-content {
+    display: block;
+}
+
+
+/* Keep subnav content visible when mouse is over it */
+.subnav-content:hover {
+    display:block;
+}
+
+/* Keep subnav content visible when mouse is over subnav button */
+.subnav:hover .subnav-content,
+.subnav-content:hover {
+    display: block;
+}
+
+/* Keep subnav content visible when subnav button is hovered */
+.subnav .subnavbtn:hover ~ .subnav-content {
+    display: block;
+}
+
+/* Afficher le contenu du sous-menu lorsque la classe .show est présente */
+.subnav-content.show {
+    display: block;
+}
+/* Barre latérale sur les appareils mobiles */
+/* Media Queries pour les appareils mobiles */
+@media screen and (max-width: 768px) {
+    /* Réduire la largeur de la barre latérale */
+    .sidenav {
+        width: 100%;
+        margin-left: 0; /* Réinitialiser la marge */
+        position: static; /* Réinitialiser la position */
+    }
+
+    /* Ajuster la marge du contenu principal */
+    .main {
+        margin-left: 0;
+        padding: 20px 10px; /* Réduire le rembourrage */
+    }
+
+    /* Ajuster la taille de la photo de profil */
+    .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* Ajuster la taille des icônes */
+    .sidenav a i {
+        margin-right: 5px; /* Réduire l'espacement */
+    }
+
+    /* Réduire la taille de la police pour les liens */
+    .sidenav a {
+        font-size: 16px;
+    }
+
+    /* Ajuster la taille de la police pour la navigation supérieure */
+    .navbar a {
+        font-size: 14px;
     }
 
     /* Ajuster la taille de la police pour le sous-menu */
